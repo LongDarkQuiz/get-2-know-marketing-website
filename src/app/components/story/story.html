@@ -1,0 +1,26 @@
+<section class="story">
+  <div class="story__container">
+    <div class="story__layout">
+      <div class="story__image" appReveal>
+        <img
+          src="images/guests-laughing.webp"
+          alt="Guests playing and enjoying the quiz"
+          loading="lazy"
+        />
+      </div>
+      <div class="story__content" appReveal [delay]="150">
+        <h2 class="story__heading">{{ content.storyHeading() }}</h2>
+        <p class="story__sub">{{ content.storySub() }}</p>
+        <ul class="story__features">
+          @for (feature of content.storyFeatures(); track feature) {
+            <li class="story__feature">
+              <img class="story__check" src="images/icons/check-bullet.svg" alt="" width="16" height="16" />
+              {{ feature }}
+            </li>
+          }
+        </ul>
+        <p class="story__footnote">{{ content.storyFootnote() }}</p>
+      </div>
+    </div>
+  </div>
+</section>

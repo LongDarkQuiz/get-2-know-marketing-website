@@ -1,0 +1,39 @@
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__content" appReveal>
+      <span class="hero__tag">
+        <svg class="hero__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275z"/></svg>
+        {{ content.heroTag() }}
+      </span>
+      <h1 class="hero__heading">{{ content.heroHeading() }} <em class="hero__heading-accent">{{ content.heroHeadingAccent() }}</em></h1>
+      <p class="hero__sub">{{ content.heroSub() }}</p>
+      <div class="hero__actions">
+        <a [href]="content.heroPrimaryCta().href" class="hero__btn hero__btn--primary">
+          {{ content.heroPrimaryCta().label }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a [href]="content.heroSecondaryCta().href" class="hero__btn hero__btn--outline">
+          {{ content.heroSecondaryCta().label }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee__track">
+    @for (item of content.heroMarqueeItems(); track item; let i = $index) {
+      <span class="marquee__item">{{ item }}</span>
+      <span class="marquee__dot">·</span>
+    }
+    @for (item of content.heroMarqueeItems(); track item; let i = $index) {
+      <span class="marquee__item">{{ item }}</span>
+      <span class="marquee__dot">·</span>
+    }
+    @for (item of content.heroMarqueeItems(); track item; let i = $index) {
+      <span class="marquee__item">{{ item }}</span>
+      <span class="marquee__dot">·</span>
+    }
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="footer__container">
+    <p class="footer__copy">{{ content.footerCopy() }}</p>
+    <nav class="footer__links">
+      @for (link of content.footerLinks(); track link.label) {
+        <a [href]="link.href">{{ link.label }}</a>
+      }
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+<section class="how" id="how">
+  <div class="how__container">
+    <div class="how__header" appReveal>
+      <h2 class="how__heading">{{ content.howHeading() }}</h2>
+      <p class="how__sub">{{ content.howSub() }}</p>
+    </div>
+
+    <div class="how__grid">
+      @for (step of content.howSteps(); track step.num; let i = $index) {
+        <div class="how__card" appReveal [delay]="i * 150">
+          <span class="how__num">{{ step.num }}</span>
+          <div class="how__icon">
+            <img [src]="step.icon" [alt]="step.title + ' icon'" width="28" height="28" />
+          </div>
+          <h3 class="how__card-title">{{ step.title }}</h3>
+          <p class="how__card-desc">{{ step.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
