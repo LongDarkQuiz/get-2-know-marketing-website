@@ -14,12 +14,22 @@
           appReveal
           [delay]="i * 150"
         >
-          <div class="pricing__badge" [class.pricing__badge--popular]="plan.highlighted" [class.pricing__badge--coming]="plan.comingSoon">
-            {{ plan.badge }}
-          </div>
+          @if (plan.comingSoon) {
+            <div class="pricing__ribbon"><span>COMING SOON</span></div>
+          }
+
+          @if (!plan.comingSoon) {
+            <div class="pricing__badge" [class.pricing__badge--popular]="plan.highlighted">
+              {{ plan.badge }}
+            </div>
+          } @else {
+            <div class="pricing__badge-spacer"></div>
+          }
 
           @if (plan.desc) {
             <p class="pricing__plan-name">{{ plan.desc }}</p>
+          } @else {
+            <p class="pricing__plan-name">&nbsp;</p>
           }
 
           <div class="pricing__price-row">

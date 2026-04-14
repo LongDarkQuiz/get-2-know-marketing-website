@@ -77,7 +77,7 @@ export class ContentService {
         'Personalised questions about the couple',
         'Guest participation tracking',
         'Shareable leaderboard',
-        'Works for 100+ guests',
+        'Works for up to 200 Guests (Event pack)',
       ],
     },
     {
@@ -88,7 +88,7 @@ export class ContentService {
         'Customised questions about the birthday person',
         'Fun milestone celebrations',
         'Instant entertainment',
-        'Works for 100+ guests',
+        'Works for up to 200 Guests (Event pack)',
       ],
     },
   ]);

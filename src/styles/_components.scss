@@ -512,14 +512,14 @@
   &__content { @include reveal-base; }
 
   &__heading {
-    font-size: 3.75rem;
+    font-size: 4.25rem;
     font-weight: $fw-extrabold;
     color: $color-white;
-    margin-bottom: $space-md;
+    margin-bottom: $space-lg;
   }
 
   &__sub {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: $color-text-on-dark-sub;
     line-height: 1.7;
     margin-bottom: $space-xl;
@@ -536,7 +536,7 @@
     display: flex;
     align-items: flex-start;
     gap: $space-md;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: $fw-medium;
     color: $color-text-on-dark;
   }
@@ -550,7 +550,7 @@
   }
 
   &__footnote {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     color: $color-text-on-dark-sub;
     font-style: italic;
   }
@@ -573,7 +573,7 @@
   }
 
   &__heading {
-    font-size: 3.75rem;
+    font-size: 4.25rem;
     font-weight: $fw-bold;
   }
 
@@ -596,22 +596,22 @@
     &-content { padding: $space-2xl; }
 
     &-icon {
-      width: 48px;
-      height: 48px;
-      padding: 10px;
+      width: 64px;
+      height: 64px;
+      padding: 14px;
       background: $color-icon-bg;
-      border-radius: $radius-md;
+      border-radius: $radius-lg;
       margin-bottom: $space-lg;
     }
 
     &-title {
-      font-size: 1.75rem;
+      font-size: $fs-h3;
       font-weight: $fw-extrabold;
       margin-bottom: $space-md;
     }
 
     &-desc {
-      font-size: $fs-body;
+      font-size: $fs-h5;
       color: $color-body;
       line-height: 1.7;
       margin-bottom: $space-xl;
@@ -624,13 +624,14 @@
 
       li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: $space-sm;
-        font-size: $fs-body;
+        font-size: $fs-h5;
         font-weight: $fw-medium;
         color: $color-heading;
 
-        svg { color: $color-check; flex-shrink: 0; }
+        img { flex-shrink: 0; margin-top: 4px; }
+        svg { color: $color-check; flex-shrink: 0; margin-top: 4px; }
       }
     }
   }
@@ -660,13 +661,13 @@
   &__content { @include reveal-base; }
 
   &__heading {
-    font-size: $fs-section-heading;
+    font-size: 4.25rem;
     font-weight: $fw-extrabold;
     margin-bottom: $space-md;
   }
 
   &__desc {
-    font-size: $fs-section-sub;
+    font-size: $fs-h5;
     color: $color-body;
     line-height: 1.7;
     margin-bottom: $space-xl;
@@ -681,7 +682,7 @@
       display: flex;
       align-items: center;
       gap: $space-sm;
-      font-size: $fs-body;
+      font-size: $fs-h5;
       font-weight: $fw-medium;
       color: $color-heading;
 
@@ -730,13 +731,13 @@
   &__content { @include reveal-base; }
 
   &__heading {
-    font-size: $fs-section-heading;
+    font-size: 4.25rem;
     font-weight: $fw-extrabold;
     margin-bottom: $space-md;
   }
 
   &__desc {
-    font-size: $fs-section-sub;
+    font-size: $fs-h5;
     color: $color-body;
     line-height: 1.7;
     margin-bottom: $space-xl;
@@ -751,7 +752,7 @@
       display: flex;
       align-items: center;
       gap: $space-sm;
-      font-size: $fs-body;
+      font-size: $fs-h5;
       font-weight: $fw-medium;
       color: $color-heading;
 
@@ -777,13 +778,13 @@
   }
 
   &__heading {
-    font-size: $fs-section-heading;
+    font-size: $fs-section-title;
     font-weight: $fw-extrabold;
     margin-bottom: $space-md;
   }
 
   &__sub {
-    font-size: $fs-section-sub;
+    font-size: $fs-section-desc;
     color: $color-body;
   }
 
@@ -808,11 +809,66 @@
     display: flex;
     flex-direction: column;
     transition: all $transition-smooth;
+    position: relative;
+    overflow: hidden;
     @include reveal-base;
 
-    &:hover { transform: translateY(-4px); box-shadow: $shadow-card-hover; }
-    &--highlighted { border: 2px solid $color-brand-primary; position: relative; }
-    &--coming { opacity: 0.85; }
+    &:hover { transform: translateY(-4px); box-shadow: $shadow-card-hover; border-color: $color-brand-primary; }
+    &--highlighted { position: relative; }
+    &--coming { }
+
+    &:not(.pricing__card--highlighted) {
+      min-height: 480px;
+    }
+  }
+
+  &__ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+
+    span {
+      display: block;
+      position: absolute;
+      top: 34px;
+      right: -52px;
+      width: 240px;
+      padding: 0.6rem 0;
+      background: linear-gradient(
+        135deg,
+        $primitive-terracotta-dark 0%,
+        $primitive-terracotta 40%,
+        $primitive-terracotta-light 70%,
+        $primitive-terracotta 100%
+      );
+      color: rgba(255, 255, 255, 0.92);
+      font-family: $font-body;
+      font-size: 0.7rem;
+      font-weight: $fw-bold;
+      letter-spacing: 0.14em;
+      text-align: center;
+      text-transform: uppercase;
+      padding-left: 20px;
+      transform: rotate(45deg);
+      transform-origin: center;
+      box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__badge-spacer {
+    height: 1.75rem;
+    margin-bottom: $space-md;
   }
 
   &__badge {
@@ -838,6 +894,7 @@
     color: $color-heading;
     letter-spacing: 0.02em;
     margin-bottom: $space-sm;
+    min-height: 1.25rem;
   }
 
   &__price-row {
