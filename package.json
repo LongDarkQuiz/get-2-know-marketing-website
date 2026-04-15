@@ -2,5 +2,8 @@
   "name": "get2know",
   "version": "1.0.0",
   "description": "get2know - The Quiz Game for Weddings, Birthdays & Events",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "npx live-server --port=8080 --no-browser"
+  }
 }
