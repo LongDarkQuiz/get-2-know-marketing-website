@@ -36,32 +36,31 @@ export class ContentService {
     {
       num: '01',
       title: 'Create',
-      desc: 'Answer 10 questions about yourself. Customise the look. Done in 2 minutes.',
+      desc: 'Put together a short quiz about you, your story, and your special day.',
       icon: 'images/icons/phone.svg',
     },
     {
       num: '02',
-      title: 'Print',
-      desc: 'Get your unique QR code. Print it on a card or display it on a screen.',
+      title: 'Share',
+      desc: 'Then print your QR codes and display them on the tables.',
       icon: 'images/icons/qr-code.svg',
     },
     {
       num: '03',
       title: 'Play',
-      desc: 'Your guests scan the code. They answer the questions. Live leaderboard updates.',
+      desc: 'Guests answer questions about you, keeping the focus where it should be.',
       icon: 'images/icons/trophy.svg',
     },
   ]);
 
   // Story section
-  readonly storyHeading = signal('Bring your guests into your story');
+  readonly storyHeading = signal('Keep guests connected to your day');
   readonly storySub = signal(
-    'A simple, fun way to get everyone involved — all centred around you, your story, and your day.'
+    'A light, personal way to bring people in - without interrupting the moments that matter.'
   );
   readonly storyFeatures = signal([
     'A quick, interactive quiz all about the couple',
-    'Guests play on their own phone — no setup needed',
-    'Questions about your story, your guests, and your day',
+    'Guests play on their own phone - no setup needed',
     'A live leaderboard that gets everyone involved',
   ]);
   readonly storyFootnote = signal('Something fun, personal, and easy for everyone to take part in.');
@@ -82,7 +81,7 @@ export class ContentService {
     },
     {
       title: 'Birthdays',
-      desc: '18th, 21st, 30th, 40th, 50th, you name it — make it memorable. A quiz about the birthday person is the perfect icebreaker that brings together old friends and new faces.',
+      desc: '18th, 21st, 30th, 40th, 50th, you name it - make it memorable. A quiz about the birthday person is the perfect icebreaker that brings together old friends and new faces.',
       icon: 'images/icons/party-popper.svg',
       features: [
         'Customised questions about the birthday person',
@@ -96,7 +95,7 @@ export class ContentService {
   // Physical card
   readonly cardHeading = signal('The physical card');
   readonly cardDesc = signal(
-    'Print your QR code on a beautiful card. Display it at your event. Your guests scan it from their phones. No setup needed.'
+    'Place a card on the table. Guests scan it when they like.'
   );
   readonly cardFeatures = signal([
     'Premium card design included',
@@ -106,9 +105,9 @@ export class ContentService {
   ]);
 
   // Leaderboard
-  readonly leaderboardHeading = signal('Live leaderboard');
+  readonly leaderboardHeading = signal('A little friendly competition');
   readonly leaderboardDesc = signal(
-    "Watch the scores update in real-time. The tension builds. Someone's winning. Someone's losing. Everyone's laughing."
+    'Scores update quietly in the background.'
   );
   readonly leaderboardFeatures = signal([
     'Real-time score updates',
@@ -167,9 +166,9 @@ export class ContentService {
   ]);
 
   // CTA
-  readonly ctaHeading = signal('Ready to make your event unforgettable?');
+  readonly ctaHeading = signal('Keep your guests engaged throughout the day');
   readonly ctaDesc = signal(
-    'Create your quiz in 2 minutes. Print the card. Let your guests play. Watch the magic happen.'
+    'Create your quiz in minutes. Print your QR card and place it around the venue. A light, personal way to keep guests engaged, while keeping the focus on you.'
   );
   readonly ctaCta = signal({ label: 'Create your quiz now', href: '#pricing' });
 
