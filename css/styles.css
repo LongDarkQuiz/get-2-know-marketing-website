@@ -349,6 +349,112 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pricing__cta--primary:hover { background: var(--color-brand-hover); }
 .pricing__cta--outline { background: transparent; color: var(--color-heading); border: 1.5px solid var(--color-bg-alt); }
 .pricing__cta--outline:hover { border-color: var(--color-heading); background: rgba(0,0,0,0.02); }
+.pricing__guidance {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-brand-dark);
+  background: rgba(196, 98, 45, 0.08);
+  border-radius: 0.625rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.pricing__guidance-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--color-brand);
+}
+
+/* ============================================
+   Success Page
+   ============================================ */
+.success {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: 2rem;
+}
+
+.success__container {
+  text-align: center;
+  max-width: 520px;
+}
+
+.success__logo {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.success__logo-accent {
+  color: var(--color-brand);
+}
+
+.success__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(90, 158, 126, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.success__icon svg {
+  color: var(--color-check);
+}
+
+.success__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+
+.success__message {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.success__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 2rem;
+  background: var(--color-brand-cta);
+  color: var(--color-white);
+}
+
+.success__cta:hover {
+  background: var(--color-brand-hover);
+  transform: scale(1.03);
+}
+
+.success__cta:active {
+  transform: scale(0.98);
+}
 
 /* ============================================
    CTA
