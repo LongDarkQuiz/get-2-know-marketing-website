@@ -5,5 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "npx live-server --port=8080 --no-browser"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.42.0"
   }
 }
