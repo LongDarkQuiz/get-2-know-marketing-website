@@ -105,8 +105,8 @@ button:focus-visible {
 .container { max-width: var(--container); margin-inline: auto; padding-inline: clamp(1rem, 3vw, 2rem); width: 100%; }
 
 /* Scroll reveal */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.revealed { opacity: 1; transform: none; }
+.reveal { opacity: 0; transition: opacity 0.6s ease; }
+.reveal.revealed { opacity: 1; }
 
 
 
@@ -406,7 +406,7 @@ button:focus-visible {
 .story__layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 @media (max-width: 767px) { .story__layout { grid-template-columns: 1fr; gap: 3rem; } }
 .story__image { border-radius: var(--radius-xl); overflow: hidden; }
-.story__image img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl); }
+.story__image img { width: 100%; height: auto; aspect-ratio: 600 / 400; object-fit: cover; border-radius: var(--radius-xl); }
 .story__heading { font-size: 4.25rem; font-weight: 800; color: var(--color-white); margin-bottom: 1.5rem; }
 .story__sub { font-size: 1.5rem; color: var(--color-peach-sub); line-height: 1.7; margin-bottom: 2rem; }
 .story__features { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
@@ -445,7 +445,7 @@ button:focus-visible {
 .pcard__features li { display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 500; color: var(--color-heading); }
 .pcard__features li img { flex-shrink: 0; }
 .pcard__image { border-radius: var(--radius-xl); overflow: hidden; }
-.pcard__image img { width: 100%; border-radius: var(--radius-xl); }
+.pcard__image img { width: 100%; height: auto; aspect-ratio: 600 / 400; border-radius: var(--radius-xl); }
 
 /* ============================================
    Leaderboard
@@ -455,7 +455,7 @@ button:focus-visible {
 .lb__layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 @media (max-width: 767px) { .lb__layout { grid-template-columns: 1fr; gap: 3rem; } }
 .lb__image { border-radius: var(--radius-xl); overflow: hidden; }
-.lb__image img { width: 100%; border-radius: var(--radius-xl); }
+.lb__image img { width: 100%; height: auto; aspect-ratio: 600 / 400; border-radius: var(--radius-xl); }
 .lb__heading { font-size: 4.25rem; font-weight: 800; margin-bottom: 1rem; }
 .lb__desc { font-size: 1.25rem; color: var(--color-body); line-height: 1.7; margin-bottom: 2rem; }
 .lb__features { display: flex; flex-direction: column; gap: 1rem; }
