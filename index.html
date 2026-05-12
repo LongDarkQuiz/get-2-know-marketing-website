@@ -371,6 +371,27 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
     });
+
+    // Fix anchor scroll: instantly reveal all elements above/within the target section
+    // so the document layout is stable before the smooth scroll begins
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const targetId = anchor.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+        // Reveal all .reveal elements from current scroll to just past the target
+        document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
+          const elTop = el.getBoundingClientRect().top + window.scrollY;
+          if (elTop <= targetTop + window.innerHeight) {
+            el.classList.add('revealed');
+            observer.unobserve(el);
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
