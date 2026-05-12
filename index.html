@@ -380,15 +380,22 @@
         const target = document.getElementById(targetId);
         if (!target) return;
 
-        const targetTop = target.getBoundingClientRect().top + window.scrollY;
+        e.preventDefault();
 
-        // Reveal all .reveal elements from current scroll to just past the target
+        // Reveal all .reveal elements from top of page to just past the target
+        const targetTop = target.getBoundingClientRect().top + window.scrollY;
         document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
           const elTop = el.getBoundingClientRect().top + window.scrollY;
           if (elTop <= targetTop + window.innerHeight) {
+            el.style.transition = 'none';
             el.classList.add('revealed');
             observer.unobserve(el);
           }
+        });
+
+        // Allow layout to settle, then scroll
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
         });
       });
     });
