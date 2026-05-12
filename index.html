@@ -107,9 +107,9 @@
     </div>
 
     <!-- ========== HOW IT WORKS ========== -->
-    <section class="how" id="how" aria-label="How it works">
+    <section class="how" aria-label="How it works">
       <div class="how__container">
-        <div class="how__header reveal">
+        <div class="how__header reveal" id="how">
           <h2 class="how__heading">How it works</h2>
           <p class="how__sub">Three steps to the most memorable moment of your event.</p>
         </div>
@@ -158,9 +158,9 @@
     </section>
 
     <!-- ========== EVENTS ========== -->
-    <section class="events" id="events" aria-label="Perfect for any celebration">
+    <section class="events" aria-label="Perfect for any celebration">
       <div class="events__container">
-        <div class="events__header reveal">
+        <div class="events__header reveal" id="events">
           <h2 class="events__heading">Perfect for any celebration</h2>
         </div>
         <div class="events__grid">
@@ -237,9 +237,9 @@
     </section>
 
     <!-- ========== PRICING ========== -->
-    <section class="pricing" id="pricing" aria-label="Pricing">
+    <section class="pricing" aria-label="Pricing">
       <div class="pricing__container">
-        <div class="pricing__header reveal">
+        <div class="pricing__header reveal" id="pricing">
           <h2 class="pricing__heading">Simple pricing</h2>
           <p class="pricing__sub">Start free. Upgrade when you're ready.</p>
         </div>
@@ -370,34 +370,6 @@
     // Sticky navbar
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
-    });
-
-    // Fix anchor scroll: instantly reveal all elements above/within the target section
-    // so the document layout is stable before the smooth scroll begins
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        const targetId = anchor.getAttribute('href').slice(1);
-        const target = document.getElementById(targetId);
-        if (!target) return;
-
-        e.preventDefault();
-
-        // Reveal all .reveal elements from top of page to just past the target
-        const targetTop = target.getBoundingClientRect().top + window.scrollY;
-        document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
-          const elTop = el.getBoundingClientRect().top + window.scrollY;
-          if (elTop <= targetTop + window.innerHeight) {
-            el.style.transition = 'none';
-            el.classList.add('revealed');
-            observer.unobserve(el);
-          }
-        });
-
-        // Allow layout to settle, then scroll
-        requestAnimationFrame(() => {
-          target.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
     });
   </script>
 </body>
